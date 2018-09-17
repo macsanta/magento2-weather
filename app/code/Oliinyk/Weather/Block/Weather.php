@@ -10,7 +10,7 @@ class Weather extends \Magento\Framework\View\Element\Template
 		\Oliinyk\Weather\Model\Grid $weatherFactory
 	)
 	{
-		$this->_weatherFactory = $_weatherFactory;
+		$this->_weatherFactory = $weatherFactory;
 		parent::__construct($context);
     }
     

@@ -10,6 +10,14 @@ class Grid extends \Magento\Framework\Model\AbstractModel
      */
     const CACHE_TAG = 'weather_items';
 
+    const NAME = 'name';
+
+    const TEMP = 'temp';
+
+    const TEMP_MIN = 'temp_min';
+
+    const TEMP_MAX = 'temp_max';
+
     /**
      * @var string
      */
@@ -40,13 +48,6 @@ class Grid extends \Magento\Framework\Model\AbstractModel
     }
 
 
-    /**
-     * Set Content.
-     */
-    public function setContent($content)
-    {
-        return $this->setData(self::CONTENT, $content);
-    }
 
     public function getChilds($entityId)
     {
