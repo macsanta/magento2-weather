@@ -17,10 +17,12 @@ class Index extends \Magento\Backend\App\Action
     
     public function __construct(
         \Magento\Backend\App\Action\Context $context,
-        \Magento\Framework\View\Result\PageFactory $resultPageFactory
+        \Magento\Framework\View\Result\PageFactory $resultPageFactory,
+        \Oliinyk\Weather\Model\GridFactory $weatherFactory
     ) {
         parent::__construct($context);
         $this->resultPageFactory = $resultPageFactory;
+        $this->_weatherFactory = $weatherFactory;
     }
 
     /**

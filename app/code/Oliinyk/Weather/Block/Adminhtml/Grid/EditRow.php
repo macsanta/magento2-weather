@@ -37,7 +37,7 @@ class EditRow extends \Magento\Backend\Block\Widget\Form\Container
         $this->addButton(
             'add',
             [
-                'label' => __('Dodaj nowe podmenu'),
+                'label' => __('Add weather item'),
                 'onclick' => 'setLocation('. $this->getUrl('weather/grid/addrow').')',
                 'class' => 'primary'
             ],
@@ -52,11 +52,6 @@ class EditRow extends \Magento\Backend\Block\Widget\Form\Container
             $this->buttonList->remove('save');
         }
         $this->buttonList->remove('reset');
-    }
-
-    public function getParentId()
-    {
-        return $this->_coreRegistry->registry('row_data')->getData('entity_id');
     }
 
     /**
