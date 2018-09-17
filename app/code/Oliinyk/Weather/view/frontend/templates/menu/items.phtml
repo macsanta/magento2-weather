@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @var \Oliinyk\Weather\Block\Menu $block
+ */
+
+$menu_id = $this->getMenuId();
+
+?>
+
+<nav class="top navigation menu">
+
+    <ul id="menu-id-<?=$menu_id?>">
+
+    <?php foreach($block->getMenuItems($menu_id) as $key => $item): ?>
+
+        <li id="menu-item-id-<?=$item->getEntityId()?>" class="parent">
+            <a href="<?=$item->getStaticUrl();?>"><?php echo $item->getTitle(); ?></a>
+
+            <?php $sub_items = $block->getMenuItems($item->getEntityId()); ?>
+
+            <?php if($sub_items && !empty($sub_items->getData())): ?>
+                <ul class="child">
+                    <?php foreach($sub_items as $s_key => $sub_item): ?>
+                        <li id="menu-item-id-<?=$sub_item->getEntityId()?>">
+                            <a href="<?=$item->getStaticUrl();?>"><?php echo $sub_item->getTitle(); ?></a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
+
+        </li>
+
+    <?php endforeach;?>
+
+    <ul>
+
+</nav>
